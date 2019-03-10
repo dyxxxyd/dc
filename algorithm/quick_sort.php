@@ -17,3 +17,27 @@ function quick_sort($arr) {
 }
 
 // 优化
+
+// 三色球问题
+// 一个数组存放三种颜色的球，对数组排序，使颜色为RGB
+function quick_sort_color($arr) {
+  $i = 0;
+  $j = count($arr) - 1;
+  while ($i < $j) {
+    while ($arr[$j] == 'B') --$j;
+    while ($arr[$j] !== 'B') ++$i;
+    if ($i >= $j) break;
+    swap($arr[$i], $arr[$j]);
+    ++$i;
+    --$j;
+  }
+  $i = 0;
+  while ($i < $j) {
+    while ($arr[$i] == 'R') ++$i;
+    while ($arr[$j] != 'R') --$j;
+    if ($i >= $j) break;
+    swap($arr[$i], $arr[$j]);
+    ++$i;
+    --$j;
+  }
+}
