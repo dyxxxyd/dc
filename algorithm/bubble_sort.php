@@ -23,9 +23,9 @@ function bubble_sort_v2($arr)
 {
     $tmp = 0;
     $length = count($arr);
-    for ($i = 0; $i < $length; ++$i) {
+    for ($i = 1; $i < $length; ++$i) {
         $flag = true;
-        for ($j = 0; $j < $length - 1; $j++) {
+        for ($j = 0; $j < $length - $i; $j++) {
             if ($arr[$j] < $arr[$j + 1]) {
                 $tmp = $arr[$j + 1];
                 $arr[$j + 1] = $arr[$j];
